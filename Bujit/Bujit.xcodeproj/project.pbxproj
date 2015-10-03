@@ -105,8 +105,8 @@
 				234443961BBF9C2C005EAA7D /* AppDelegate.m */,
 				234443981BBF9C2C005EAA7D /* ViewController.h */,
 				234443991BBF9C2C005EAA7D /* ViewController.m */,
-				2344439B1BBF9C2C005EAA7D /* Main.storyboard */,
 				2344439E1BBF9C2C005EAA7D /* Assets.xcassets */,
+				2344439B1BBF9C2C005EAA7D /* Main.storyboard */,
 				234443A01BBF9C2C005EAA7D /* LaunchScreen.storyboard */,
 				234443A31BBF9C2C005EAA7D /* Info.plist */,
 				234443921BBF9C2C005EAA7D /* Supporting Files */,
@@ -503,6 +503,7 @@
 				234443BE1BBF9C2C005EAA7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		234443BF1BBF9C2C005EAA7D /* Build configuration list for PBXNativeTarget "BujitTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +512,7 @@
 				234443C11BBF9C2C005EAA7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		234443C21BBF9C2C005EAA7D /* Build configuration list for PBXNativeTarget "BujitUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +521,7 @@
 				234443C41BBF9C2C005EAA7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
