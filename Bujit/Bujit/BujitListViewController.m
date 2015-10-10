@@ -7,6 +7,7 @@
 //
 
 #import "BujitListViewController.h"
+#import "AddBujitViewController.h"
 #import "BujitStore.h"
 #import "BujitModel.h"
 
@@ -26,7 +27,11 @@
     self.navigationItem.rightBarButtonItem = addNewBudgetButtonItem;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +56,7 @@
     
     BujitModel *bujitModel = [BujitStore sharedStore].allItems[indexPath.row];
     cell.textLabel.text = bujitModel.budgetName;
+    cell.detailTextLabel.text = [bujitModel budgetAsString];
     
     return cell;
 }
@@ -102,7 +108,10 @@
 }
 
 - (void)addNewBudget:(id)sender {
+    AddBujitViewController *newBujit = [[AddBujitViewController alloc]init];
+    newBujit.budget = [[BujitModel alloc]init];
     
+    [self.navigationController pushViewController:newBujit animated:YES];
 }
 
 @end

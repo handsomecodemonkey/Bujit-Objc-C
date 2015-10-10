@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class BujitModel;
+
 @interface BujitStore : NSObject
 
 @property (nonatomic, readonly, copy) NSArray *allItems;
 
 +(instancetype)sharedStore;
+-(void)addItem: (BujitModel *)newBudget;
 
 @end

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BujitModel;
+
 @interface AddBujitViewController : UIViewController
+
+@property(nonatomic, strong)BujitModel *budget;
 
 @end

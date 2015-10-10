@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddBujitViewController">
             <connections>
+                <outlet property="budgetNameTextfield" destination="TKX-M8-XD3" id="aqw-2D-4Qq"/>
+                <outlet property="initialDepositTextField" destination="AYv-yV-Btt" id="4xI-GG-Ol6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,13 +17,21 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-yV-Btt">
+                    <rect key="frame" x="227" y="322" width="147" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="147" id="mTy-uN-RUr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TKX-M8-XD3">
                     <rect key="frame" x="226" y="127" width="147" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="147" id="hNP-tt-UOP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                    <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjs-fI-s3o">
                     <rect key="frame" x="226" y="285" width="147" height="29"/>
@@ -49,22 +59,23 @@
                         </mask>
                     </variation>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-yV-Btt">
-                    <rect key="frame" x="227" y="322" width="147" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="147" id="mTy-uN-RUr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAX-gz-P8E">
+                    <rect key="frame" x="280" y="441" width="41" height="30"/>
+                    <state key="normal" title="Finish"/>
+                    <connections>
+                        <action selector="addNewBudget:" destination="-1" eventType="touchUpInside" id="GcW-oa-Cm0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="TKX-M8-XD3" firstAttribute="top" secondItem="NO7-aF-GKa" secondAttribute="bottom" constant="8" id="D3l-H8-XY2"/>
+                <constraint firstItem="dAX-gz-P8E" firstAttribute="top" secondItem="AYv-yV-Btt" secondAttribute="bottom" constant="89" id="GJl-vY-gCd"/>
                 <constraint firstItem="AYv-yV-Btt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ogj-Yz-A4L"/>
                 <constraint firstItem="sjs-fI-s3o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SQZ-LN-h3n"/>
                 <constraint firstItem="NO7-aF-GKa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="VW0-mt-zxW"/>
                 <constraint firstItem="NO7-aF-GKa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WAN-sI-sT1"/>
+                <constraint firstItem="dAX-gz-P8E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gqN-SB-aLy"/>
                 <constraint firstItem="AYv-yV-Btt" firstAttribute="top" secondItem="sjs-fI-s3o" secondAttribute="bottom" constant="8" id="gyD-AK-OOh"/>
                 <constraint firstItem="sjs-fI-s3o" firstAttribute="top" secondItem="TKX-M8-XD3" secondAttribute="bottom" constant="128" id="qwJ-8l-Q7C"/>
                 <constraint firstItem="TKX-M8-XD3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="srG-6s-l8E"/>

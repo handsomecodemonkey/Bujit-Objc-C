@@ -7,6 +7,7 @@
 //
 
 #import "BujitStore.h"
+#import "BujitModel.h"
 
 @interface BujitStore()
 
@@ -43,6 +44,10 @@
 
 -(NSArray *)allItems {
     return [self.budgets copy];
+}
+
+-(void)addItem:(BujitModel *)newBudget {
+    [self.budgets addObject:newBudget];
 }
 
 @end
