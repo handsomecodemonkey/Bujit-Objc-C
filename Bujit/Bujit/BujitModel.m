@@ -10,4 +10,12 @@
 
 @implementation BujitModel
 
+-(NSString *)budgetAsString {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+    
+    return [formatter stringFromNumber:self.budgetAmount];
+}
+
 @end

@@ -10,4 +10,9 @@
 
 @interface BujitModel : NSObject
 
+@property(nonatomic,strong) NSString *budgetName;
+@property(nonatomic,strong) NSNumber *budgetAmount;
+
+-(NSString *)budgetAsString;
+
 @end
