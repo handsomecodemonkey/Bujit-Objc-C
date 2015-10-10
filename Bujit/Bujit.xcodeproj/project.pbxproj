@@ -16,6 +16,7 @@
 		234443B81BBF9C2C005EAA7D /* BujitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 234443B71BBF9C2C005EAA7D /* BujitUITests.m */; };
 		2377DD381BC8958100204BD4 /* BujitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD371BC8958100204BD4 /* BujitDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2377DD3B1BC895B400204BD4 /* BujitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD3A1BC895B400204BD4 /* BujitListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2377DD3E1BC8A0AF00204BD4 /* BNRBudgetStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD3D1BC8A0AF00204BD4 /* BNRBudgetStore.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		2377DD371BC8958100204BD4 /* BujitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BujitDetailViewController.m; sourceTree = "<group>"; };
 		2377DD391BC895B400204BD4 /* BujitListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BujitListViewController.h; sourceTree = "<group>"; };
 		2377DD3A1BC895B400204BD4 /* BujitListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BujitListViewController.m; sourceTree = "<group>"; };
+		2377DD3C1BC8A0AF00204BD4 /* BNRBudgetStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRBudgetStore.h; sourceTree = "<group>"; };
+		2377DD3D1BC8A0AF00204BD4 /* BNRBudgetStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRBudgetStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				2377DD371BC8958100204BD4 /* BujitDetailViewController.m */,
 				2377DD391BC895B400204BD4 /* BujitListViewController.h */,
 				2377DD3A1BC895B400204BD4 /* BujitListViewController.m */,
+				2377DD3C1BC8A0AF00204BD4 /* BNRBudgetStore.h */,
+				2377DD3D1BC8A0AF00204BD4 /* BNRBudgetStore.m */,
 				2344439E1BBF9C2C005EAA7D /* Assets.xcassets */,
 				2344439B1BBF9C2C005EAA7D /* Main.storyboard */,
 				234443A01BBF9C2C005EAA7D /* LaunchScreen.storyboard */,
@@ -279,6 +284,7 @@
 				234443971BBF9C2C005EAA7D /* AppDelegate.m in Sources */,
 				2377DD3B1BC895B400204BD4 /* BujitListViewController.m in Sources */,
 				2377DD381BC8958100204BD4 /* BujitDetailViewController.m in Sources */,
+				2377DD3E1BC8A0AF00204BD4 /* BNRBudgetStore.m in Sources */,
 				234443941BBF9C2C005EAA7D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

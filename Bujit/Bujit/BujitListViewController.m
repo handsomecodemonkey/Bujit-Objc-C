@@ -90,5 +90,8 @@
     // Pass the selected object to the new view controller.
 }
 
+- (void)addNewBudget:(id)sender {
+    
+}
 
 @end
