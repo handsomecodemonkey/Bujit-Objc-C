@@ -1,13 +1,13 @@
 //
-//  BNRBudgetStore.m
+//  BujitModel.h
 //  Bujit
 //
 //  Created by Erick Kusnadi on 10/9/15.
 //  Copyright © 2015 Handsome Code Monkey. All rights reserved.
 //
 
-#import "BNRBudgetStore.h"
+#import <Foundation/Foundation.h>
 
-@implementation BNRBudgetStore
+@interface BujitModel : NSObject
 
 @end
