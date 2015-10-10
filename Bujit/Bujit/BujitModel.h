@@ -13,6 +13,8 @@
 @property(nonatomic,strong) NSString *budgetName;
 @property(nonatomic,strong) NSNumber *budgetAmount;
 
+//TODO: Add a transactions array
+
 -(NSString *)budgetAsString;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "BujitListViewController.h"
+#import "BujitStore.h"
+#import "BujitModel.h"
 
 @interface BujitListViewController ()
 
@@ -37,7 +39,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [BujitStore sharedStore].allItems.count;
 }
 
 
@@ -45,7 +47,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Test";
+    BujitModel *bujitModel = [BujitStore sharedStore].allItems[indexPath.row];
+    cell.textLabel.text = bujitModel.budgetName;
     
     return cell;
 }

@@ -17,6 +17,7 @@
 		2377DD3B1BC895B400204BD4 /* BujitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD3A1BC895B400204BD4 /* BujitListViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2377DD411BC8A10B00204BD4 /* BujitModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD401BC8A10B00204BD4 /* BujitModel.m */; settings = {ASSET_TAGS = (); }; };
 		2377DD431BC8B4CA00204BD4 /* BujitModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD421BC8B4CA00204BD4 /* BujitModelTests.m */; settings = {ASSET_TAGS = (); }; };
+		2377DD461BC8B69700204BD4 /* BujitStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD451BC8B69700204BD4 /* BujitStore.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		2377DD3F1BC8A10B00204BD4 /* BujitModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BujitModel.h; sourceTree = "<group>"; };
 		2377DD401BC8A10B00204BD4 /* BujitModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BujitModel.m; sourceTree = "<group>"; };
 		2377DD421BC8B4CA00204BD4 /* BujitModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BujitModelTests.m; sourceTree = "<group>"; };
+		2377DD441BC8B69700204BD4 /* BujitStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BujitStore.h; sourceTree = "<group>"; };
+		2377DD451BC8B69700204BD4 /* BujitStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BujitStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				2377DD371BC8958100204BD4 /* BujitDetailViewController.m */,
 				2377DD391BC895B400204BD4 /* BujitListViewController.h */,
 				2377DD3A1BC895B400204BD4 /* BujitListViewController.m */,
+				2377DD441BC8B69700204BD4 /* BujitStore.h */,
+				2377DD451BC8B69700204BD4 /* BujitStore.m */,
 				2377DD3F1BC8A10B00204BD4 /* BujitModel.h */,
 				2377DD401BC8A10B00204BD4 /* BujitModel.m */,
 				2344439E1BBF9C2C005EAA7D /* Assets.xcassets */,
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2377DD461BC8B69700204BD4 /* BujitStore.m in Sources */,
 				234443971BBF9C2C005EAA7D /* AppDelegate.m in Sources */,
 				2377DD3B1BC895B400204BD4 /* BujitListViewController.m in Sources */,
 				2377DD381BC8958100204BD4 /* BujitDetailViewController.m in Sources */,
