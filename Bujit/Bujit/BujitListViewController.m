@@ -96,6 +96,7 @@
 
 - (void)addNewBudget:(id)sender {
     AddBujitViewController *newBujit = [[AddBujitViewController alloc]init];
+    newBujit.title = @"Add New Budget";
     newBujit.budget = [[BujitModel alloc]init];
     
     [self.navigationController pushViewController:newBujit animated:YES];
