@@ -19,4 +19,6 @@
 -(void)removeItemAtIndex: (NSUInteger)index;
 -(BujitModel *)objectAtIndex: (NSUInteger)index;
 
+-(BOOL)saveChanges;
+
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BujitModel : NSObject
+@interface BujitModel : NSObject <NSCoding>
 
 @property(nonatomic,strong) NSString *budgetName;
 @property(nonatomic,strong) NSNumber *budgetAmount;

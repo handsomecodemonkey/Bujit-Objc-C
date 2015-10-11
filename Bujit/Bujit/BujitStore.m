@@ -37,7 +37,14 @@
 -(instancetype)initPrivate {
     self = [super init];
     if(self){
-        _budgets = [[NSMutableArray alloc]init];
+        
+        NSString *path = [self itemArchivePath];
+        _budgets = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        
+        if(!_budgets) {
+            _budgets = [[NSMutableArray alloc]init];
+        }
+        
     }
     return self;
 }
@@ -59,5 +66,18 @@
     return [self.budgets objectAtIndex:index];
 }
 
+#pragma mark - Archiving
+
+- (NSString *)itemArchivePath {
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories firstObject];
+    
+    return [documentDirectory stringByAppendingPathComponent:@"budgets.archive"];
+}
+
+-(BOOL)saveChanges {
+    NSString *path = [self itemArchivePath];
+    return [NSKeyedArchiver archiveRootObject:self.budgets toFile:path];
+}
 
 @end
