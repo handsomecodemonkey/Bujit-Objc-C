@@ -7,12 +7,15 @@
 //
 
 #import "BujitDetailViewController.h"
+#import "BujitModel.h"
 
 @interface BujitDetailViewController ()
 
 @end
 
 @implementation BujitDetailViewController
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +25,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Initializers
+
+-(instancetype)init {
+    BujitModel *newBudget = [[BujitModel alloc]init];
+    return [self initWithModel:newBudget];
+}
+
+//Designated initializer and constructor injection
+-(instancetype)initWithModel:(BujitModel *)budget {
+    self = [super init];
+    if(self){
+        _budget = budget;
+    }
+    return self;
 }
 
 /*

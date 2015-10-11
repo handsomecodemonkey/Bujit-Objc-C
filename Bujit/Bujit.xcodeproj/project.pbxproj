@@ -20,6 +20,7 @@
 		2377DD461BC8B69700204BD4 /* BujitStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD451BC8B69700204BD4 /* BujitStore.m */; settings = {ASSET_TAGS = (); }; };
 		2377DD4A1BC8BBFD00204BD4 /* AddBujitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377DD481BC8BBFD00204BD4 /* AddBujitViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2377DD4B1BC8BBFD00204BD4 /* AddBujitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2377DD491BC8BBFD00204BD4 /* AddBujitViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		23D347F51BCA35F700CCA271 /* BujitDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D347F41BCA35F700CCA271 /* BujitDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		2377DD471BC8BBFD00204BD4 /* AddBujitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBujitViewController.h; sourceTree = "<group>"; };
 		2377DD481BC8BBFD00204BD4 /* AddBujitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBujitViewController.m; sourceTree = "<group>"; };
 		2377DD491BC8BBFD00204BD4 /* AddBujitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBujitViewController.xib; sourceTree = "<group>"; };
+		23D347F41BCA35F700CCA271 /* BujitDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BujitDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				2377DD3A1BC895B400204BD4 /* BujitListViewController.m */,
 				2377DD361BC8958100204BD4 /* BujitDetailViewController.h */,
 				2377DD371BC8958100204BD4 /* BujitDetailViewController.m */,
+				23D347F41BCA35F700CCA271 /* BujitDetailViewController.xib */,
 				2377DD441BC8B69700204BD4 /* BujitStore.h */,
 				2377DD451BC8B69700204BD4 /* BujitStore.m */,
 				2377DD3F1BC8A10B00204BD4 /* BujitModel.h */,
@@ -269,6 +272,7 @@
 			files = (
 				234443A21BBF9C2C005EAA7D /* LaunchScreen.storyboard in Resources */,
 				2377DD4B1BC8BBFD00204BD4 /* AddBujitViewController.xib in Resources */,
+				23D347F51BCA35F700CCA271 /* BujitDetailViewController.xib in Resources */,
 				2344439F1BBF9C2C005EAA7D /* Assets.xcassets in Resources */,
 				2344439D1BBF9C2C005EAA7D /* Main.storyboard in Resources */,
 			);

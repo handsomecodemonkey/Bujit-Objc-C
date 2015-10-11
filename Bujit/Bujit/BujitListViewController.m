@@ -8,6 +8,7 @@
 
 #import "BujitListViewController.h"
 #import "AddBujitViewController.h"
+#import "BujitDetailViewController.h"
 #import "BujitStore.h"
 #import "BujitModel.h"
 
@@ -69,6 +70,10 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BujitDetailViewController *detailViewController;
+}
+
 // Override to support rearranging the table view.
 /*
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
@@ -96,7 +101,7 @@
 
 - (void)addNewBudget:(id)sender {
     AddBujitViewController *newBujit = [[AddBujitViewController alloc]init];
-    newBujit.title = @"Add New Budget";
+    newBujit.title = @"New Budget";
     newBujit.budget = [[BujitModel alloc]init];
     
     [self.navigationController pushViewController:newBujit animated:YES];
