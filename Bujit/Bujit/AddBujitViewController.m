@@ -73,7 +73,13 @@
 #pragma mark - UITextFieldDelegate
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
     [textField resignFirstResponder];
+    
+    if(textField == self.budgetNameTextfield) {
+        [self.initialDepositTextField becomeFirstResponder];
+    }
+    
     return YES;
 }
 
