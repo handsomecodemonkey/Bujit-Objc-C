@@ -17,6 +17,12 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *mainToolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
+@property (nonatomic, strong) NSNumber *amountCopy;
+@property(nonatomic) BOOL addingMoney;
+@property(nonatomic, strong)NSNumberFormatter *formatter;
+
+@property(nonatomic) UIEdgeInsets defaultInsets;
+
 @end
 
 @implementation BujitDetailViewController
@@ -26,7 +32,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.frame = [UIScreen mainScreen].bounds;
+    self.amountTextField.delegate = self;
+    
+    self.formatter = [[NSNumberFormatter alloc]init];
+    [self.formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    self.formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+    
+    self.amountCopy = [self.formatter numberFromString:self.amountTextField.text];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backgroundTapped:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
 
@@ -40,6 +56,11 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -65,18 +86,49 @@
 
 #pragma mark - Buttons
 - (IBAction)addMoreMoney:(UIButton *)sender {
+    self.addingMoney = YES;
     self.mainToolbar.hidden = NO;
     [self.amountTextField becomeFirstResponder];
 }
 
 - (IBAction)subtractMoney:(UIButton *)sender {
-    
+    self.addingMoney = NO;
+    self.mainToolbar.hidden = NO;
+    [self.amountTextField becomeFirstResponder];
 }
 
 - (IBAction)keyboardDoneEditing:(id)sender {
     self.mainToolbar.hidden = YES;
     [self.amountTextField resignFirstResponder];
+    
+    if(self.amountTextField.text.length == 0) {
+        return;
+    }
+    
+    self.amountCopy = [self.formatter numberFromString:self.budgetAmountLabel.text];
+    double amount = [self.amountTextField.text doubleValue];
+    amount = self.addingMoney ? amount : -amount;
+    NSNumber *newAmount = [NSNumber numberWithDouble:(self.amountCopy.doubleValue + amount)];
+    NSString *newAmountString = [self.formatter stringFromNumber:newAmount];
+    self.budget.budgetAmount = newAmount;
+    self.budgetAmountLabel.text = newAmountString;
+    
+    self.amountTextField.text = @"";
 }
+
+-(void)backgroundTapped: (UIGestureRecognizer *)gestureRecognizer {
+    self.mainToolbar.hidden = YES;
+    [self.view endEditing:YES];
+    self.amountTextField.text = @"";
+}
+
+#pragma mark - UITextFieldDelegate
+
+/*
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+}
+ */
 
 #pragma mark - Keyboard Notifications
 
@@ -102,7 +154,7 @@
     CGRect keyboardRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, 10, 0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     
     [UIView animateWithDuration:0.2 animations:^{
         self.scrollView.contentInset = contentInsets;
