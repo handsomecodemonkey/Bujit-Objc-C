@@ -10,9 +10,12 @@
 #import "BujitModel.h"
 #import "BujitStore.h"
 
-@interface BujitDetailViewController ()
+@interface BujitDetailViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *keyboardField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
+@property (weak, nonatomic) IBOutlet UIToolbar *mainToolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @end
 
@@ -23,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.frame = [UIScreen mainScreen].bounds;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,8 +35,16 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Initializers
@@ -52,25 +65,53 @@
 
 #pragma mark - Buttons
 - (IBAction)addMoreMoney:(UIButton *)sender {
-    
+    self.mainToolbar.hidden = NO;
+    [self.amountTextField becomeFirstResponder];
 }
 
 - (IBAction)subtractMoney:(UIButton *)sender {
     
 }
 
-- (IBAction)keyboardDone:(UIButton *)sender {
+- (IBAction)keyboardDoneEditing:(id)sender {
+    self.mainToolbar.hidden = YES;
+    [self.amountTextField resignFirstResponder];
+}
+
+#pragma mark - Keyboard Notifications
+
+-(void)keyboardDidShow:(NSNotification *)note{
+    NSDictionary *info = [note userInfo];
+    CGRect keyboardRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
     
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0);
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.scrollView.contentInset = contentInsets;
+        self.scrollView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+    CGRect messageFrame = self.mainToolbar.frame;
+    messageFrame.origin.y -= keyboardRect.size.height;
+    [self.mainToolbar setFrame:messageFrame];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)keyboardDidHide:(NSNotification *)note {
+    NSDictionary *info = [note userInfo];
+    CGRect keyboardRect = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, 10, 0);
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.scrollView.contentInset = contentInsets;
+        self.scrollView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+    CGRect messageFrame = self.mainToolbar.frame;
+    messageFrame.origin.y += keyboardRect.size.height;
+    [self.mainToolbar setFrame:messageFrame];
 }
-*/
 
 @end
