@@ -8,8 +8,11 @@
 
 #import "BujitDetailViewController.h"
 #import "BujitModel.h"
+#import "BujitStore.h"
 
 @interface BujitDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *keyboardField;
 
 @end
 
@@ -27,6 +30,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 #pragma mark - Initializers
 
 -(instancetype)init {
@@ -41,6 +48,19 @@
         _budget = budget;
     }
     return self;
+}
+
+#pragma mark - Buttons
+- (IBAction)addMoreMoney:(UIButton *)sender {
+    
+}
+
+- (IBAction)subtractMoney:(UIButton *)sender {
+    
+}
+
+- (IBAction)keyboardDone:(UIButton *)sender {
+    
 }
 
 /*

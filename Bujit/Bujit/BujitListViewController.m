@@ -72,11 +72,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    BujitDetailViewController *detailViewController = [[BujitDetailViewController alloc]initWithModel:[[BujitStore sharedStore]objectAtIndex:indexPath.row]];
+    BujitModel *budget = [[BujitStore sharedStore]objectAtIndex:indexPath.row];
+    BujitDetailViewController *detailViewController = [[BujitDetailViewController alloc]initWithModel:budget];
+    detailViewController.title = budget.budgetName;
     
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        detailViewController.budgetAmountLabel.text = [budget budgetAsString];
+    });
+    
     self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self.navigationController pushViewController:detailViewController animated:YES];
     
 }
 

@@ -5,12 +5,89 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BujitDetailViewController">
+            <connections>
+                <outlet property="budgetAmountLabel" destination="kif-fj-pcJ" id="37m-eu-s8f"/>
+                <outlet property="keyboardField" destination="xM5-Xf-Qfp" id="DEi-Ua-dtD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="WeM-HX-Ggz"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kif-fj-pcJ">
+                    <rect key="frame" x="293" y="285" width="15" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXk-He-Kq4">
+                    <rect key="frame" x="285" y="322" width="30" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="-"/>
+                    <connections>
+                        <action selector="subtractMoney:" destination="-1" eventType="touchUpInside" id="tMO-sY-HAT"/>
+                    </connections>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PH7-nb-QwW">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="7Tj-Yh-gto"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" id="vUo-er-JyJ">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="xM5-Xf-Qfp">
+                                <rect key="frame" x="20" y="7" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="JBM-va-N6N"/>
+                        <barButtonItem style="plain" id="LAC-6y-eOc">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DzB-u1-ecL">
+                                <rect key="frame" x="543" y="7" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="-1" eventType="touchUpInside" id="YGG-mk-etz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeA-dT-vmU">
+                    <rect key="frame" x="285" y="236" width="30" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="addMoreMoney:" destination="-1" eventType="touchUpInside" id="ZeP-Se-TsK"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kif-fj-pcJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="68J-33-LMf"/>
+                <constraint firstItem="kif-fj-pcJ" firstAttribute="top" secondItem="PeA-dT-vmU" secondAttribute="bottom" constant="8" id="8Ih-pE-Fci"/>
+                <constraint firstItem="PeA-dT-vmU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QZ4-0u-ACJ"/>
+                <constraint firstAttribute="trailing" secondItem="PH7-nb-QwW" secondAttribute="trailing" id="UcQ-qM-xEp"/>
+                <constraint firstItem="BXk-He-Kq4" firstAttribute="top" secondItem="kif-fj-pcJ" secondAttribute="bottom" constant="8" id="W3o-ST-XC1"/>
+                <constraint firstItem="PH7-nb-QwW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dyS-V8-v7U"/>
+                <constraint firstAttribute="bottom" secondItem="PH7-nb-QwW" secondAttribute="bottom" id="eLk-Qq-eSk"/>
+                <constraint firstItem="BXk-He-Kq4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fAH-HT-ONd"/>
+                <constraint firstItem="kif-fj-pcJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="u9l-Dv-aWY"/>
+                <constraint firstItem="PeA-dT-vmU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="247" id="vU6-CA-QUc"/>
+                <constraint firstItem="PeA-dT-vmU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="236" id="xbC-yj-azF"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="vU6-CA-QUc"/>
+                    <exclude reference="xbC-yj-azF"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

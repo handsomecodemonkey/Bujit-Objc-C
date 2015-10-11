@@ -13,6 +13,8 @@
 @interface BujitDetailViewController : UIViewController
 
 @property (nonatomic, strong) BujitModel *budget;
+@property (weak, nonatomic) IBOutlet UILabel *budgetAmountLabel;
+
 
 -(instancetype)initWithModel: (BujitModel *)budget;
 
