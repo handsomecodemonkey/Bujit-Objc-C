@@ -24,13 +24,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R3-pq-GJk">
-                            <rect key="frame" x="293" y="192" width="15" height="29"/>
+                            <rect key="frame" x="293" y="149" width="15" height="29"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxJ-0q-Iyf">
-                            <rect key="frame" x="285" y="143" width="30" height="41"/>
+                            <rect key="frame" x="285" y="100" width="30" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <state key="normal" title="+"/>
                             <connections>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWY-Qj-hQV">
-                            <rect key="frame" x="285" y="229" width="30" height="41"/>
+                            <rect key="frame" x="285" y="186" width="30" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <state key="normal" title="-"/>
                             <connections>
@@ -48,14 +48,14 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="AWY-Qj-hQV" firstAttribute="top" secondItem="0R3-pq-GJk" secondAttribute="bottom" constant="8" symbolic="YES" id="8Ts-9W-raq"/>
-                        <constraint firstItem="0R3-pq-GJk" firstAttribute="centerX" secondItem="GmH-kA-q6n" secondAttribute="centerX" id="C1p-my-Llx"/>
-                        <constraint firstItem="0R3-pq-GJk" firstAttribute="top" secondItem="TxJ-0q-Iyf" secondAttribute="bottom" constant="8" symbolic="YES" id="Lds-FH-G4A"/>
-                        <constraint firstItem="AWY-Qj-hQV" firstAttribute="leading" secondItem="TxJ-0q-Iyf" secondAttribute="leading" id="Pb8-fK-SFB"/>
-                        <constraint firstAttribute="bottom" secondItem="0R3-pq-GJk" secondAttribute="bottom" constant="335" id="WJI-7s-5Oy"/>
-                        <constraint firstAttribute="trailing" secondItem="TxJ-0q-Iyf" secondAttribute="trailing" constant="285" id="dIg-bb-MSk"/>
-                        <constraint firstItem="0R3-pq-GJk" firstAttribute="centerX" secondItem="TxJ-0q-Iyf" secondAttribute="centerX" id="vKQ-PC-9n5"/>
-                        <constraint firstItem="TxJ-0q-Iyf" firstAttribute="top" secondItem="GmH-kA-q6n" secondAttribute="top" constant="143" id="xf1-T0-29R"/>
+                        <constraint firstItem="AWY-Qj-hQV" firstAttribute="centerX" secondItem="GmH-kA-q6n" secondAttribute="centerX" id="R9R-Qs-Cu0"/>
+                        <constraint firstItem="AWY-Qj-hQV" firstAttribute="top" secondItem="0R3-pq-GJk" secondAttribute="bottom" constant="8" symbolic="YES" id="Tet-dq-Mih"/>
+                        <constraint firstAttribute="trailing" secondItem="TxJ-0q-Iyf" secondAttribute="trailing" constant="285" id="V2g-n5-bKe"/>
+                        <constraint firstItem="TxJ-0q-Iyf" firstAttribute="centerX" secondItem="0R3-pq-GJk" secondAttribute="centerX" id="W8f-a9-lss"/>
+                        <constraint firstItem="TxJ-0q-Iyf" firstAttribute="top" secondItem="GmH-kA-q6n" secondAttribute="top" constant="100" id="ZtE-VJ-MnZ"/>
+                        <constraint firstAttribute="bottom" secondItem="AWY-Qj-hQV" secondAttribute="bottom" constant="329" id="dCh-XM-1VE"/>
+                        <constraint firstItem="0R3-pq-GJk" firstAttribute="top" secondItem="TxJ-0q-Iyf" secondAttribute="bottom" constant="8" symbolic="YES" id="hhC-EM-awE"/>
+                        <constraint firstItem="TxJ-0q-Iyf" firstAttribute="leading" secondItem="AWY-Qj-hQV" secondAttribute="leading" id="qCu-XS-eEC"/>
                     </constraints>
                 </scrollView>
                 <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-5u-JSp">
