@@ -50,4 +50,10 @@
     [self.budgets addObject:newBudget];
 }
 
+
+-(void)removeItemAtIndex: (NSUInteger)index {
+    [self.budgets removeObjectAtIndex:index];
+}
+
+
 @end
