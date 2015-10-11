@@ -17,5 +17,6 @@
 +(instancetype)sharedStore;
 -(void)addItem: (BujitModel *)newBudget;
 -(void)removeItemAtIndex: (NSUInteger)index;
+-(BujitModel *)objectAtIndex: (NSUInteger)index;
 
 @end

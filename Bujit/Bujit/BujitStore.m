@@ -55,5 +55,9 @@
     [self.budgets removeObjectAtIndex:index];
 }
 
+-(BujitModel *)objectAtIndex: (NSUInteger)index {
+    return [self.budgets objectAtIndex:index];
+}
+
 
 @end

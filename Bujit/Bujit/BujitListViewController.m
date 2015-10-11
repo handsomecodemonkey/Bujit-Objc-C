@@ -71,7 +71,13 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BujitDetailViewController *detailViewController;
+    
+    BujitDetailViewController *detailViewController = [[BujitDetailViewController alloc]initWithModel:[[BujitStore sharedStore]objectAtIndex:indexPath.row]];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    self.navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
 }
 
 // Override to support rearranging the table view.
