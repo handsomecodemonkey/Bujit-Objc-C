@@ -139,10 +139,11 @@
     
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, keyboardRect.size.height, 0);
     
-    [UIView animateWithDuration:0.2 animations:^{
+    
+    [UIView animateWithDuration:1 delay:0.0 usingSpringWithDamping:0.3 initialSpringVelocity:0.0 options:0 animations:^{
         self.scrollView.contentInset = contentInsets;
         self.scrollView.scrollIndicatorInsets = contentInsets;
-    }];
+    }completion:NULL];
     
     CGRect messageFrame = self.mainToolbar.frame;
     messageFrame.origin.y -= keyboardRect.size.height;
@@ -155,15 +156,18 @@
     keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
     
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    
-    [UIView animateWithDuration:0.2 animations:^{
-        self.scrollView.contentInset = contentInsets;
-        self.scrollView.scrollIndicatorInsets = contentInsets;
-    }];
+
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
     
     CGRect messageFrame = self.mainToolbar.frame;
     messageFrame.origin.y += keyboardRect.size.height;
     [self.mainToolbar setFrame:messageFrame];
+    
+    [UIView animateWithDuration:1 delay:0.0 usingSpringWithDamping:0.3 initialSpringVelocity:0.0 options:0 animations:^{
+        [self.scrollView setContentOffset:CGPointMake(0, -self.navigationController.navigationBar.frame.size.height) animated:NO];
+    }completion:NULL];
+    
 }
 
 @end
